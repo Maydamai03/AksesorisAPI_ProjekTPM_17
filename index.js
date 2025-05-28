@@ -23,10 +23,8 @@ dotenv.config();
 const app = express();
 
 // CORS setup (boleh akses dari mana saja, bisa difilter nanti kalau perlu)
-app.use(cors({
-  origin: true, // Atau whitelist sesuai kebutuhan
-  credentials: true
-}));
+app.use(cors({ credentials: true, origin: 'http://127.0.0.1:5500' }));
+
 
 app.use(cookieParser());
 app.use(express.json());
@@ -39,9 +37,4 @@ app.use(productRoutes);
 app.use(transactionRoutes);
 app.use(userRoutes);
 
-// Gunakan port dari env (Cloud Run otomatis set ini)
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-  console.log(`✅ Server running on port ${PORT}`);
-});
+app.listen(5000, () => console.log("Server running on http://localhost:5000"));
