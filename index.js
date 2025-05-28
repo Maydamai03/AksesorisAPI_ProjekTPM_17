@@ -23,7 +23,7 @@ dotenv.config();
 const app = express();
 
 // CORS setup (boleh akses dari mana saja, bisa difilter nanti kalau perlu)
-app.use(cors({ credentials: true, origin: 'http://127.0.0.1:5500' }));
+app.use(cors({ credentials: true, origin: true }));
 
 
 app.use(cookieParser());
