@@ -1,0 +1,77 @@
+### Register User
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+  "name": "User1",
+  "email": "user1@example.com",
+  "password": "password123"
+}
+
+### Login User
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "email": "user1@example.com",
+  "password": "password123"
+}
+
+### Get All Products
+GET http://localhost:5000/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg0MzgwMzAsImV4cCI6MTc0ODUyNDQzMH0.ccBL5IBXc4FtTQMq3DxQ9oP5lxKaoGAFeKdOvM5SXck
+
+
+### Create Product (Login Dulu, Ambil token dari hasil login)
+POST http://localhost:3000/products
+Authorization: Bearer {{TOKEN}}
+Content-Type: multipart/form-data
+
+# Gunakan file upload di REST Client (VSCode extension), atau gunakan Postman untuk unggah gambar
+# Contoh isian manual jika tidak pakai file upload:
+# name=Gelang Keren&description=Gelang dari kulit asli&price=15000
+
+### Update Product
+PUT http://localhost:5000/products/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg0MzgwMzAsImV4cCI6MTc0ODUyNDQzMH0.ccBL5IBXc4FtTQMq3DxQ9oP5lxKaoGAFeKdOvM5SXck
+Content-Type: application/json
+
+{
+  "name": "Gelang Updated",
+  "description": "Deskripsi update",
+  "price": 18000
+}
+
+### Delete Product
+DELETE http://localhost:3000/products/1
+Authorization: Bearer {{TOKEN}}
+
+### Get All Transactions
+GET http://localhost:3000/transactions
+Authorization: Bearer {{TOKEN}}
+
+### Create Transaction
+POST http://localhost:3000/transactions
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+  "productId": 2,
+  "quantity": 3,
+  "total": 45000
+}
+
+### Update Transaction
+PUT http://localhost:3000/transactions/1
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+  "quantity": 4,
+  "total": 60000,
+  "status": "selesai"
+}
+
+### Delete Transaction
+DELETE http://localhost:3000/transactions/1
+Authorization: Bearer {{TOKEN}}
