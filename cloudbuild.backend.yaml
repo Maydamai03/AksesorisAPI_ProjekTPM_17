@@ -1,12 +1,12 @@
 steps:
   # 1. Build Docker image untuk backend
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/$PROJECT_ID/aksesorisAPI-17", "."]
+    args: ["build", "-t", "gcr.io/$PROJECT_ID/aksesoris-api-17", "."]
     dir: "backend"
 
   # 2. Push ke Container Registry / Artifact Registry
   - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/$PROJECT_ID/aksesorisAPI-17"]
+    args: ["push", "gcr.io/$PROJECT_ID/aksesoris-api-17"]
 
   # 3. Deploy ke Cloud Run
   - name: "gcr.io/cloud-builders/gcloud"
@@ -15,9 +15,9 @@ steps:
       [
         "run",
         "deploy",
-        "aksesorisAPI-17",
+        "aksesoris-api-17",
         "--image",
-        "gcr.io/$PROJECT_ID/aksesorisAPI-17",
+        "gcr.io/$PROJECT_ID/aksesoris-api-17",
         "--timeout",
         "1000s",
         "--port",
