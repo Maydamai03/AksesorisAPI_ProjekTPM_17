@@ -1,31 +1,39 @@
 ### Register User
-POST http://localhost:5000/register
+POST https://aksesoris-api-17-296685597625.us-central1.run.app/register
 Content-Type: application/json
 
 {
-  "name": "may",
-  "email": "jagad.damai0303@gmail.com",
+  "name": "tes",
+  "email": "tes@gmail.com",
   "password": "123"
 }
 
 ### Login User
-POST http://localhost:5000/login
+POST https://aksesoris-api-17-296685597625.us-central1.run.app/login
 Content-Type: application/json
 
 {
-  "email": "user1@example.com",
-  "password": "password123"
+  "email": "tes@gmail.com",
+  "password": "123"
 }
 
 ### Get All Products
-GET http://localhost:5000/products
+GET https://aksesoris-api-17-296685597625.us-central1.run.app/products
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg0MzgwMzAsImV4cCI6MTc0ODUyNDQzMH0.ccBL5IBXc4FtTQMq3DxQ9oP5lxKaoGAFeKdOvM5SXck
 
 
 ### Create Product (Login Dulu, Ambil token dari hasil login)
-POST http://localhost:3000/products
-Authorization: Bearer 
-Content-Type: multipart/form-data
+POST https://aksesoris-api-17-296685597625.us-central1.run.app/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg0NDk5ODksImV4cCI6MTc0ODUzNjM4OX0.2EwEDJcgIV2SgKEbybJXrdxfYgh-V83m-f5CF_PB7fw
+Content-Type: application/json
+
+{
+  "name": "Gelang Unik Antik Kaciw Kalcer",
+  "description": "Anti karat, silver, 100cm",
+  "price": 120000,
+  "image": "https://i.imgur.com/abcd123.jpg"
+}
+
 
 # Gunakan file upload di REST Client (VSCode extension), atau gunakan Postman untuk unggah gambar
 # Contoh isian manual jika tidak pakai file upload:
