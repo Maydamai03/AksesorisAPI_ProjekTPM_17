@@ -24,7 +24,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6I
 
 ### Create Product (Login Dulu, Ambil token dari hasil login)
 POST https://aksesoris-api-17-296685597625.us-central1.run.app/products
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg1MzA5OTMsImV4cCI6MTc0ODYxNzM5M30.Qr4MPxu7LIFtQauL2YB9E5SKCqk5rNUMV12XrntlZ_c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg3MjI0NTcsImV4cCI6MTc0ODgwODg1N30.TVwFzkgs86CRVUscHNqXTpgs3dm-erPJQDfFS524Q4M
 Content-Type: application/json
 
 {
@@ -61,7 +61,7 @@ Content-Type: application/json
 
 ### Test: Create an Order
 POST https://aksesoris-api-17-296685597625.us-central1.run.app/orders
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg3MjE3NTgsImV4cCI6MTc0ODgwODE1OH0.M-w4T4L-CbnYnUbh5EVCKbdUgO7vV-IMSVUFCJ9iHzc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg3MjI0NTcsImV4cCI6MTc0ODgwODg1N30.TVwFzkgs86CRVUscHNqXTpgs3dm-erPJQDfFS524Q4M
 Content-Type: application/json
 
 {
