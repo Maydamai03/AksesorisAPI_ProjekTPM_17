@@ -1,5 +1,6 @@
-import { Order, OrderItem } from "../models/Order.js"; // Import kedua model
-import Product from "../models/Product.js"; // Import Product untuk eager loading jika perlu
+
+import { Order, OrderItem } from "../models/Order.js";
+import Product from "../models/Product.js";
 
 export const getAllOrders = async (req, res) => {
   try {
@@ -7,16 +8,20 @@ export const getAllOrders = async (req, res) => {
       where: { userId: req.userId },
       include: [{
         model: OrderItem,
-        as: 'items', // Sesuai dengan 'as' di relasi Order.hasMany(OrderItem)
-        attributes: ['productName', 'productImageUrl', 'pricePerUnit', 'quantity', 'subtotal']
+        as: 'items',
+        // Tambahkan 'productId' ke attributes
+        attributes: ['productId', 'productName', 'productImageUrl', 'pricePerUnit', 'quantity', 'subtotal'] // <<< UBAH BARIS INI
       }],
-      order: [['orderDate', 'DESC']] // Urutkan dari terbaru
+      order: [['orderDate', 'DESC']]
     });
     res.json(orders);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
+
+// Bagian createOrder, updateOrder, deleteOrder tidak perlu diubah karena sudah benar
+// ... (createOrder, updateOrder, deleteOrder functions)
 
 export const createOrder = async (req, res) => {
   try {
