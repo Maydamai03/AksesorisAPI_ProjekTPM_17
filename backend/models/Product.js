@@ -7,7 +7,7 @@ const { DataTypes } = Sequelize;
 const Product = db.define("products", {
   name: DataTypes.STRING,
   description: DataTypes.TEXT,
-  price: DataTypes.INTEGER, // <<< UBAH INI KE DOUBLE
+  price: DataTypes.INTEGER, 
   image: DataTypes.STRING,
   userId: {
     type: DataTypes.INTEGER,

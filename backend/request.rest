@@ -13,7 +13,7 @@ POST https://aksesoris-api-17-296685597625.us-central1.run.app/login
 Content-Type: application/json
 
 {
-  "email": "tes@gmail.com",
+  "email": "ding123@gmail.com",
   "password": "123"
 }
 
@@ -56,12 +56,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6I
 
 ### Test: Get All Products (Untuk mendapatkan productId)
 GET https://aksesoris-api-17-296685597625.us-central1.run.app/products
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg3MjE3NTgsImV4cCI6MTc0ODgwODE1OH0.M-w4T4L-CbnYnUbh5EVCKbdUgO7vV-IMSVUFCJ9iHzc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg3MjU4NjksImV4cCI6MTc0ODgxMjI2OX0.81Cel-LkMVwsPbFDVIgyu1e7jSYFdT1xdgV87z68k-Q
 Content-Type: application/json
 
 ### Test: Create an Order
 POST https://aksesoris-api-17-296685597625.us-central1.run.app/orders
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg3MjI0NTcsImV4cCI6MTc0ODgwODg1N30.TVwFzkgs86CRVUscHNqXTpgs3dm-erPJQDfFS524Q4M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg3MjU4NjksImV4cCI6MTc0ODgxMjI2OX0.81Cel-LkMVwsPbFDVIgyu1e7jSYFdT1xdgV87z68k-Q
 Content-Type: application/json
 
 {
@@ -89,5 +89,5 @@ Content-Type: application/json
 
 ### Test: Get All Orders for Current User
 GET https://aksesoris-api-17-296685597625.us-central1.run.app/orders
-Authorization: Bearer YOUR_AUTH_TOKEN
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg3MjU4NjksImV4cCI6MTc0ODgxMjI2OX0.81Cel-LkMVwsPbFDVIgyu1e7jSYFdT1xdgV87z68k-Q
 Content-Type: application/json
