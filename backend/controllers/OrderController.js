@@ -60,7 +60,8 @@ export const createOrder = async (req, res) => {
       include: [{
         model: OrderItem,
         as: 'items',
-        attributes: ['productName', 'productImageUrl', 'pricePerUnit', 'quantity', 'subtotal']
+        // Pastikan attributes di sini juga mencakup productId!
+        attributes: ['productId', 'productName', 'productImageUrl', 'pricePerUnit', 'quantity', 'subtotal'] // <<< UBAH BARIS INI
       }]
     });
 
