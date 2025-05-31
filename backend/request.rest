@@ -24,14 +24,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6I
 
 ### Create Product (Login Dulu, Ambil token dari hasil login)
 POST https://aksesoris-api-17-296685597625.us-central1.run.app/products
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg0NDk5ODksImV4cCI6MTc0ODUzNjM4OX0.2EwEDJcgIV2SgKEbybJXrdxfYgh-V83m-f5CF_PB7fw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg1MzA5OTMsImV4cCI6MTc0ODYxNzM5M30.Qr4MPxu7LIFtQauL2YB9E5SKCqk5rNUMV12XrntlZ_c
 Content-Type: application/json
 
 {
-  "name": "Gelang Unik Antik Kaciw Kalcer",
-  "description": "Anti karat, silver, 100cm",
-  "price": 120000,
-  "image": "https://i.imgur.com/abcd123.jpg"
+  "name": "Yankees Baseball Cap",
+  "description": "Black Color with NY Logo",
+  "price": 899090,
+  "image": "https://assets.preloved.co.id/products/324414/acf4083a-8273-4c77-94a9-c62077d68157.jpg"
 }
 
 
@@ -51,35 +51,43 @@ Content-Type: application/json
 }
 
 ### Delete Product
-DELETE http://localhost:3000/products/1
-Authorization: Bearer 
+DELETE https://aksesoris-api-17-296685597625.us-central1.run.app/products/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg0NTA0MTIsImV4cCI6MTc0ODUzNjgxMn0.nWhhKYO5ShjQ826ndbHVjYhtNbYgH0z7f8eykJ9qOZA
 
-### Get All Transactions
-GET http://localhost:3000/transactions
-Authorization: Bearer 
+### Test: Get All Products (Untuk mendapatkan productId)
+GET https://aksesoris-api-17-296685597625.us-central1.run.app/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg3MjE3NTgsImV4cCI6MTc0ODgwODE1OH0.M-w4T4L-CbnYnUbh5EVCKbdUgO7vV-IMSVUFCJ9iHzc
+Content-Type: application/json
 
-### Create Transaction
-POST http://localhost:3000/transactions
-Authorization: Bearer 
+### Test: Create an Order
+POST https://aksesoris-api-17-296685597625.us-central1.run.app/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDg3MjE3NTgsImV4cCI6MTc0ODgwODE1OH0.M-w4T4L-CbnYnUbh5EVCKbdUgO7vV-IMSVUFCJ9iHzc
 Content-Type: application/json
 
 {
-  "productId": 2,
-  "quantity": 3,
-  "total": 45000
+    "recipientName": "Penerima Contoh",
+    "deliveryAddress": "Jalan Contoh No. 123, Kota Contoh, Provinsi Contoh",
+    "currency": "IDR",
+    "totalAmount": 250000.00,
+    "products": [
+        {
+            "id": 4,
+            "name": "Gelang Unik Antik Kaciw Kalcer",
+            "pricePerUnit": 120000,
+            "imageUrl": "https://static.pullandbear.net/assets/public/67bc/f3e7/a3a94122b112/fcf18e1ea8f3/03997502808-A1M/03997502808-A1M.jpg?ts=1730816156090&w=1082&f=auto",
+            "quantity": 1
+        },
+        {
+            "id": 8,
+            "name": "Dior Men Necklace",
+            "pricePerUnit": 12300000,
+            "imageUrl": "https://assets.christiandior.com/is/image/diorprod/LOOK_H_24_3_LOOK_079_E40?$lookDefault_GH-GHC$&crop=568,0,1864,2000&bfc=on&qlt=85",
+            "quantity": 2
+        }
+    ]
 }
 
-### Update Transaction
-PUT http://localhost:3000/transactions/1
-Authorization: Bearer 
+### Test: Get All Orders for Current User
+GET https://aksesoris-api-17-296685597625.us-central1.run.app/orders
+Authorization: Bearer YOUR_AUTH_TOKEN
 Content-Type: application/json
-
-{
-  "quantity": 4,
-  "total": 60000,
-  "status": "selesai"
-}
-
-### Delete Transaction
-DELETE http://localhost:3000/transactions/1
-Authorization: Bearer
