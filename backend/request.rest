@@ -3,8 +3,8 @@ POST https://aksesoris-api-17-296685597625.us-central1.run.app/register
 Content-Type: application/json
 
 {
-  "name": "tes",
-  "email": "tes@gmail.com",
+  "name": "may",
+  "email": "may@gmail.com",
   "password": "123"
 }
 

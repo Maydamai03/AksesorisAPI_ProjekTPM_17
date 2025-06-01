@@ -4,7 +4,7 @@ import db from "../config/database.js";
 
 const { DataTypes } = Sequelize;
 
-const Auth = db.define("users", {
+const User = db.define("users", {
   name: {
     type: DataTypes.STRING,
     allowNull: false
@@ -26,7 +26,7 @@ const Auth = db.define("users", {
   freezeTableName: true
 });
 
-export default Auth;
+export default User;
 
 (async () => {
   await db.sync();
